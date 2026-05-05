@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic.base import TemplateView, RedirectView
 from .models import Post
 from django.shortcuts import get_object_or_404
-from django.views.generic import ListView
+from django.views.generic import ListView,DetailView
 # Create your views here.
 
 # Function Base View show a template
@@ -43,7 +43,7 @@ class RedirectToMaktab(RedirectView):
         return super().get_redirect_url(*args, **kwargs)
     
     
-class PostList(ListView):
+class PostListView(ListView):
     """
     A class based view to show list of posts
     """
@@ -54,4 +54,9 @@ class PostList(ListView):
     ordering = '-id'
     
     
+class PostDetailView(DetailView):
+    """
+    A class based view to show details of a post
+    """
+    model = Post
     
