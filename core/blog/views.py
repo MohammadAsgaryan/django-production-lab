@@ -37,7 +37,7 @@ class IndexView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["name"] = "mmd"
-        context["posts"] = Post.objects.all()
+        #context["posts"] = Post.objects.all()
         return context
 
     """ FBV for redirect
@@ -58,7 +58,7 @@ class RedirectToMaktab(RedirectView):
         return super().get_redirect_url(*args, **kwargs)
 
 
-class PostListView(PermissionRequiredMixin, LoginRequiredMixin, ListView):
+class PostListView(ListView):
     """
     A class based view to show list of posts
     """
@@ -71,7 +71,7 @@ class PostListView(PermissionRequiredMixin, LoginRequiredMixin, ListView):
     ordering = "-id"
 
 
-class PostDetailView(LoginRequiredMixin, DetailView):
+class PostDetailView(DetailView):
     """
     A class based view to show details of a post
     """
