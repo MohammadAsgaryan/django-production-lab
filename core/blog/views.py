@@ -71,7 +71,7 @@ class PostListView(ListView):
     ordering = "-id"
 
 
-class PostDetailView(DetailView):
+class PostDetailView(LoginRequiredMixin, DetailView):
     """
     A class based view to show details of a post
     """
