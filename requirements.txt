@@ -5,6 +5,7 @@ pillow
 djangorestframework
 djangorestframework-simplejwt
 djoser
+django-cors-headers
 
 
 # third party modules
