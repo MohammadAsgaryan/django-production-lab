@@ -7,6 +7,8 @@ djangorestframework-simplejwt
 djoser
 django-cors-headers
 
+# deployment module
+gunicorn
 
 # third party modules
 markdown
